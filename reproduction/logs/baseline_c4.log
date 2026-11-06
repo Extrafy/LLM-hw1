@@ -1,0 +1,32 @@
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00, 16.09it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00, 16.06it/s]
+/home/wangfy26/miniconda3/envs/LLM-hw1/lib/python3.12/site-packages/transformers/generation/configuration_utils.py:392: UserWarning: `do_sample` is set to `False`. However, `temperature` is set to `0.9` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `temperature`. This was detected when initializing the generation config instance, which means the corresponding file may hold incorrect parameterization and should be fixed.
+  warnings.warn(
+/home/wangfy26/miniconda3/envs/LLM-hw1/lib/python3.12/site-packages/transformers/generation/configuration_utils.py:397: UserWarning: `do_sample` is set to `False`. However, `top_p` is set to `0.6` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `top_p`. This was detected when initializing the generation config instance, which means the corresponding file may hold incorrect parameterization and should be fixed.
+  warnings.warn(
+PPL blocks 10/256: 7.031545
+PPL blocks 20/256: 6.994977
+PPL blocks 30/256: 7.548151
+PPL blocks 40/256: 7.350853
+PPL blocks 50/256: 7.111018
+PPL blocks 60/256: 7.087902
+PPL blocks 70/256: 6.990918
+PPL blocks 80/256: 7.100229
+PPL blocks 90/256: 7.299673
+PPL blocks 100/256: 7.099653
+PPL blocks 110/256: 7.090818
+PPL blocks 120/256: 7.164009
+PPL blocks 130/256: 7.173091
+PPL blocks 140/256: 7.175825
+PPL blocks 150/256: 6.947842
+PPL blocks 160/256: 6.952338
+PPL blocks 170/256: 7.015863
+PPL blocks 180/256: 7.039552
+PPL blocks 190/256: 6.907765
+PPL blocks 200/256: 7.026929
+PPL blocks 210/256: 7.104864
+PPL blocks 220/256: 7.163091
+PPL blocks 230/256: 7.191801
+PPL blocks 240/256: 7.261974
+PPL blocks 250/256: 7.284728
+PPL blocks 256/256: 7.263599
+{'ppl': 7.263598503139569, 'dataset': 'c4', 'seqlen': 2048, 'blocks': 256, 'predicted_tokens': 524032, 'total_tokenized_tokens': 524288, 'dropped_tokens': 0, 'seconds': 50.35338469874114, 'peak_allocated_bytes': 14225679360, 'model_allocated_bytes': 13543956480, 'token_ids_sha256': '971168528327c35f4663eef2b1c881cb97aa692174a1cd16311063bc25604ef7', 'model': '/home/wangfy26/workspace/LLM-hw1/model', 'output': 'reproduction/results/baseline_c4.json', 'max_blocks': 0, 'bits': 16, 'hadamard': False, 'sample': False}

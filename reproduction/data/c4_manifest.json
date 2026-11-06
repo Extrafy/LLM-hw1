@@ -1,0 +1,7 @@
+{
+  "url": "https://huggingface.co/datasets/allenai/c4/resolve/607bd4c8450a42878aa9ddc051a65a055450ef87/en/c4-validation.00000-of-00008.json.gz",
+  "revision": "607bd4c8450a42878aa9ddc051a65a055450ef87",
+  "rows": 1100,
+  "selection": "first 1100 documents of fixed validation shard, matching upstream",
+  "sha256": "887e42080583e0d115b736a8cbbbaed6d795ae6c311d1e45ed5ed9c82b5a275c"
+}

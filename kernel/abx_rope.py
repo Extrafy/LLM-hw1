@@ -5,6 +5,7 @@ import torch
 import triton
 import triton.language as tl
 import argparse
+import os
 
 from .pytorch_reference import LlamaRotaryEmbedding, apply_rotary_pos_emb_pytorch
 
@@ -28,6 +29,10 @@ def get_freq_multi_tokens(starting_idx, theta: tl.constexpr, NB_TOKENS: tl.const
 
 
 def get_configs():
+    if os.environ.get("PALU_AUTOTUNE") == "1":
+        return [triton.Config({'BLOCK_SIZE_L': l, 'BLOCK_SIZE_R': r}, num_warps=w, num_stages=s)
+                for l, r, w, s in [(64,32,4,1), (128,32,4,3), (64,32,4,3),
+                                    (128,64,4,3), (128,32,8,3), (64,64,4,2)]]
     configs = []
     for block_l in [16, 32, 64, 128]:
         for block_r in [16, 32]:
@@ -43,7 +48,7 @@ def get_configs():
 
 @triton.autotune(
     configs= get_configs(),
-    key=["seq_len"]
+    key=["seq_len", "R", "NUM_GROUPS"]
 )
 @triton.jit
 def _abx_fwd(
@@ -78,7 +83,7 @@ def _abx_fwd(
     xb_1 = tl.zeros((BLOCK_SIZE_L, BLOCK_SIZE_D), dtype=tl.float32)
     for _ in range(0, tl.cdiv(R, BLOCK_SIZE_R)):
         # Load next block of B, X
-        x = tl.load(X_ptrs)
+        x = tl.load(X_ptrs, mask=offs_ls[:, None] < seq_len, other=0.)
         b_0 = tl.load(B_ptrs)
         b_1 = tl.load(B_ptrs + BLOCK_SIZE_D * stride_bd)
         # Accumulate along R dimension.
@@ -108,7 +113,7 @@ def _abx_fwd(
     abx_0 = tl.sum(a_0 * xb_0, 1)
     abx_1 = tl.sum(a_1 * xb_1, 1)
     abx = abx_0 + abx_1
-    tl.store(O_ptrs, abx[None, :])
+    tl.store(O_ptrs, abx[None, :], mask=offs_ls[None, :] < seq_len)
 
     
 def abx(a: torch.Tensor, b: torch.Tensor, x: torch.Tensor) -> torch.Tensor:

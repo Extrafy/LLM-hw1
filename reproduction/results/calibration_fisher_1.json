@@ -1,0 +1,13 @@
+{
+  "kind": "fisher",
+  "samples": 2048,
+  "seqlen": 1024,
+  "shard": 1,
+  "shards": 2,
+  "seed": 3,
+  "model": "/home/wangfy26/workspace/LLM-hw1/model",
+  "loss": "upstream double shift",
+  "count": 1024,
+  "seconds": 497.50978355901316,
+  "peak_cuda_bytes": 23029864448
+}

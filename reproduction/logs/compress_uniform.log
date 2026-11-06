@@ -1,0 +1,59 @@
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00, 18.26it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00, 18.23it/s]
+/home/wangfy26/miniconda3/envs/LLM-hw1/lib/python3.12/site-packages/transformers/generation/configuration_utils.py:392: UserWarning: `do_sample` is set to `False`. However, `temperature` is set to `0.9` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `temperature`. This was detected when initializing the generation config instance, which means the corresponding file may hold incorrect parameterization and should be fixed.
+  warnings.warn(
+/home/wangfy26/miniconda3/envs/LLM-hw1/lib/python3.12/site-packages/transformers/generation/configuration_utils.py:397: UserWarning: `do_sample` is set to `False`. However, `top_p` is set to `0.6` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `top_p`. This was detected when initializing the generation config instance, which means the corresponding file may hold incorrect parameterization and should be fixed.
+  warnings.warn(
+compressed layer 1/32, elapsed 1.4s
+compressed layer 2/32, elapsed 2.6s
+compressed layer 3/32, elapsed 3.7s
+compressed layer 4/32, elapsed 4.8s
+compressed layer 5/32, elapsed 5.9s
+compressed layer 6/32, elapsed 7.0s
+compressed layer 7/32, elapsed 8.1s
+compressed layer 8/32, elapsed 9.2s
+compressed layer 9/32, elapsed 10.3s
+compressed layer 10/32, elapsed 11.3s
+compressed layer 11/32, elapsed 12.4s
+compressed layer 12/32, elapsed 13.5s
+compressed layer 13/32, elapsed 14.6s
+compressed layer 14/32, elapsed 15.7s
+compressed layer 15/32, elapsed 16.8s
+compressed layer 16/32, elapsed 17.9s
+compressed layer 17/32, elapsed 19.0s
+compressed layer 18/32, elapsed 20.1s
+compressed layer 19/32, elapsed 21.2s
+compressed layer 20/32, elapsed 22.3s
+compressed layer 21/32, elapsed 23.3s
+compressed layer 22/32, elapsed 24.4s
+compressed layer 23/32, elapsed 25.5s
+compressed layer 24/32, elapsed 26.6s
+compressed layer 25/32, elapsed 27.7s
+compressed layer 26/32, elapsed 28.8s
+compressed layer 27/32, elapsed 29.9s
+compressed layer 28/32, elapsed 31.0s
+compressed layer 29/32, elapsed 32.0s
+compressed layer 30/32, elapsed 33.1s
+compressed layer 31/32, elapsed 34.2s
+compressed layer 32/32, elapsed 35.3s
+Traceback (most recent call last):
+  File "/home/wangfy26/miniconda3/envs/LLM-hw1/lib/python3.12/site-packages/transformers/generation/configuration_utils.py", line 558, in save_pretrained
+    raise ValueError(str([w.message for w in caught_warnings]))
+ValueError: [UserWarning('`do_sample` is set to `False`. However, `temperature` is set to `0.9` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `temperature`.'), UserWarning('`do_sample` is set to `False`. However, `top_p` is set to `0.6` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `top_p`.')]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/wangfy26/workspace/LLM-hw1/reproduction/scripts/compress_model.py", line 70, in <module>
+    main()
+  File "/home/wangfy26/workspace/LLM-hw1/reproduction/scripts/compress_model.py", line 64, in main
+    dump_to_huggingface_repos(model, tokenizer, a.output, SimpleNamespace())
+  File "/home/wangfy26/workspace/LLM-hw1/utils.py", line 54, in dump_to_huggingface_repos
+    model.save_pretrained(save_path)
+  File "/home/wangfy26/miniconda3/envs/LLM-hw1/lib/python3.12/site-packages/transformers/modeling_utils.py", line 2364, in save_pretrained
+    model_to_save.generation_config.save_pretrained(save_directory)
+  File "/home/wangfy26/miniconda3/envs/LLM-hw1/lib/python3.12/site-packages/transformers/generation/configuration_utils.py", line 560, in save_pretrained
+    raise ValueError(
+ValueError: The generation config instance is invalid -- `.validate()` throws warnings and/or exceptions. Fix these issues to save the configuration.
+
+Thrown during validation:
+[UserWarning('`do_sample` is set to `False`. However, `temperature` is set to `0.9` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `temperature`.'), UserWarning('`do_sample` is set to `False`. However, `top_p` is set to `0.6` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `top_p`.')]

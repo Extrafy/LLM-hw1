@@ -1,0 +1,19 @@
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:00<00:00, 19.85it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:00<00:00, 20.72it/s]
+PPL blocks 10/166: 6.808019
+PPL blocks 20/166: 7.540409
+PPL blocks 30/166: 7.656939
+PPL blocks 40/166: 7.710601
+PPL blocks 50/166: 7.342938
+PPL blocks 60/166: 7.451027
+PPL blocks 70/166: 7.209120
+PPL blocks 80/166: 7.159185
+PPL blocks 90/166: 7.164572
+PPL blocks 100/166: 7.137847
+PPL blocks 110/166: 7.386921
+PPL blocks 120/166: 7.435360
+PPL blocks 130/166: 7.409526
+PPL blocks 140/166: 7.409817
+PPL blocks 150/166: 7.362136
+PPL blocks 160/166: 7.314910
+PPL blocks 166/166: 7.356670
+{'ppl': 7.356669619709787, 'dataset': 'wikitext2', 'seqlen': 2048, 'blocks': 166, 'predicted_tokens': 339802, 'total_tokenized_tokens': 341469, 'dropped_tokens': 1501, 'seconds': 32.500091132707894, 'peak_allocated_bytes': 13286155264, 'model_allocated_bytes': 12604432384, 'token_ids_sha256': '8e0218eea3a8ac00caa80af114e52f301aa90a919124378320787e7f777cb3ee', 'model': 'reproduction/checkpoints/uniform_g4_r50', 'output': 'reproduction/results/uniform_2048.json', 'max_blocks': 0, 'bits': 16, 'hadamard': False, 'sample': False}

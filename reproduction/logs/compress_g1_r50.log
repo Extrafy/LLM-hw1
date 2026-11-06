@@ -1,0 +1,38 @@
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00, 15.35it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00, 15.32it/s]
+/home/wangfy26/miniconda3/envs/LLM-hw1/lib/python3.12/site-packages/transformers/generation/configuration_utils.py:392: UserWarning: `do_sample` is set to `False`. However, `temperature` is set to `0.9` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `temperature`. This was detected when initializing the generation config instance, which means the corresponding file may hold incorrect parameterization and should be fixed.
+  warnings.warn(
+/home/wangfy26/miniconda3/envs/LLM-hw1/lib/python3.12/site-packages/transformers/generation/configuration_utils.py:397: UserWarning: `do_sample` is set to `False`. However, `top_p` is set to `0.6` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `top_p`. This was detected when initializing the generation config instance, which means the corresponding file may hold incorrect parameterization and should be fixed.
+  warnings.warn(
+compressed layer 1/32, elapsed 2.6s
+compressed layer 2/32, elapsed 5.0s
+compressed layer 3/32, elapsed 7.4s
+compressed layer 4/32, elapsed 9.7s
+compressed layer 5/32, elapsed 12.1s
+compressed layer 6/32, elapsed 14.4s
+compressed layer 7/32, elapsed 16.8s
+compressed layer 8/32, elapsed 19.2s
+compressed layer 9/32, elapsed 21.5s
+compressed layer 10/32, elapsed 23.9s
+compressed layer 11/32, elapsed 26.3s
+compressed layer 12/32, elapsed 28.7s
+compressed layer 13/32, elapsed 31.1s
+compressed layer 14/32, elapsed 33.5s
+compressed layer 15/32, elapsed 35.9s
+compressed layer 16/32, elapsed 38.2s
+compressed layer 17/32, elapsed 40.6s
+compressed layer 18/32, elapsed 43.1s
+compressed layer 19/32, elapsed 45.5s
+compressed layer 20/32, elapsed 48.0s
+compressed layer 21/32, elapsed 50.5s
+compressed layer 22/32, elapsed 53.0s
+compressed layer 23/32, elapsed 55.6s
+compressed layer 24/32, elapsed 58.1s
+compressed layer 25/32, elapsed 60.8s
+compressed layer 26/32, elapsed 63.4s
+compressed layer 27/32, elapsed 66.0s
+compressed layer 28/32, elapsed 68.7s
+compressed layer 29/32, elapsed 71.4s
+compressed layer 30/32, elapsed 74.1s
+compressed layer 31/32, elapsed 76.8s
+compressed layer 32/32, elapsed 79.6s
+Saved reproduction/checkpoints/g1_r50, actual KV retained fraction=0.49609375

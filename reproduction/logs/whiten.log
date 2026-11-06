@@ -1,0 +1,53 @@
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:00<00:00,  8.12it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00,  9.77it/s]
+/home/wangfy26/miniconda3/envs/LLM-hw1/lib/python3.12/site-packages/transformers/generation/configuration_utils.py:392: UserWarning: `do_sample` is set to `False`. However, `temperature` is set to `0.9` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `temperature`. This was detected when initializing the generation config instance, which means the corresponding file may hold incorrect parameterization and should be fixed.
+  warnings.warn(
+/home/wangfy26/miniconda3/envs/LLM-hw1/lib/python3.12/site-packages/transformers/generation/configuration_utils.py:397: UserWarning: `do_sample` is set to `False`. However, `top_p` is set to `0.6` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `top_p`. This was detected when initializing the generation config instance, which means the corresponding file may hold incorrect parameterization and should be fixed.
+  warnings.warn(
+whiten 16/256, elapsed 5.5s
+whiten 32/256, elapsed 10.6s
+whiten 48/256, elapsed 15.7s
+whiten 64/256, elapsed 20.8s
+whiten 80/256, elapsed 26.0s
+whiten 96/256, elapsed 31.2s
+whiten 112/256, elapsed 36.3s
+whiten 128/256, elapsed 41.5s
+whiten 144/256, elapsed 46.7s
+whiten 160/256, elapsed 51.8s
+whiten 176/256, elapsed 57.0s
+whiten 192/256, elapsed 62.2s
+whiten 208/256, elapsed 67.4s
+whiten 224/256, elapsed 72.7s
+whiten 240/256, elapsed 77.9s
+whiten 256/256, elapsed 83.2s
+cholesky layer 0: diagonal correction=0.0
+cholesky layer 1: diagonal correction=0.0
+cholesky layer 2: diagonal correction=0.0
+cholesky layer 3: diagonal correction=0.0
+cholesky layer 4: diagonal correction=0.0
+cholesky layer 5: diagonal correction=0.0
+cholesky layer 6: diagonal correction=0.0
+cholesky layer 7: diagonal correction=0.0
+cholesky layer 8: diagonal correction=0.0
+cholesky layer 9: diagonal correction=0.0
+cholesky layer 10: diagonal correction=0.0
+cholesky layer 11: diagonal correction=0.0
+cholesky layer 12: diagonal correction=0.0
+cholesky layer 13: diagonal correction=0.0
+cholesky layer 14: diagonal correction=0.0
+cholesky layer 15: diagonal correction=0.0
+cholesky layer 16: diagonal correction=0.0
+cholesky layer 17: diagonal correction=0.0
+cholesky layer 18: diagonal correction=0.0
+cholesky layer 19: diagonal correction=0.0
+cholesky layer 20: diagonal correction=0.0
+cholesky layer 21: diagonal correction=0.0
+cholesky layer 22: diagonal correction=0.0
+cholesky layer 23: diagonal correction=0.0
+cholesky layer 24: diagonal correction=0.0
+cholesky layer 25: diagonal correction=0.0
+cholesky layer 26: diagonal correction=0.0
+cholesky layer 27: diagonal correction=0.0
+cholesky layer 28: diagonal correction=0.0
+cholesky layer 29: diagonal correction=0.0
+cholesky layer 30: diagonal correction=0.0
+cholesky layer 31: diagonal correction=0.0

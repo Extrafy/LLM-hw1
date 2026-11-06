@@ -1,0 +1,27 @@
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:00<00:00,  8.37it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00, 10.05it/s]
+/home/wangfy26/miniconda3/envs/LLM-hw1/lib/python3.12/site-packages/transformers/generation/configuration_utils.py:392: UserWarning: `do_sample` is set to `False`. However, `temperature` is set to `0.9` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `temperature`. This was detected when initializing the generation config instance, which means the corresponding file may hold incorrect parameterization and should be fixed.
+  warnings.warn(
+/home/wangfy26/miniconda3/envs/LLM-hw1/lib/python3.12/site-packages/transformers/generation/configuration_utils.py:397: UserWarning: `do_sample` is set to `False`. However, `top_p` is set to `0.6` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `top_p`. This was detected when initializing the generation config instance, which means the corresponding file may hold incorrect parameterization and should be fixed.
+  warnings.warn(
+PPL blocks 10/166: 5.041078
+PPL blocks 20/166: 5.724509
+PPL blocks 30/166: 5.832574
+PPL blocks 40/166: 5.823047
+PPL blocks 50/166: 5.556224
+PPL blocks 60/166: 5.637507
+PPL blocks 70/166: 5.445107
+PPL blocks 80/166: 5.393568
+PPL blocks 90/166: 5.393371
+PPL blocks 100/166: 5.376430
+PPL blocks 110/166: 5.547940
+PPL blocks 120/166: 5.556875
+PPL blocks 130/166: 5.495968
+PPL blocks 140/166: 5.501318
+PPL blocks 150/166: 5.469895
+PPL blocks 160/166: 5.446423
+PPL blocks 166/166: 5.472130
+/home/wangfy26/miniconda3/envs/LLM-hw1/lib/python3.12/site-packages/transformers/generation/configuration_utils.py:392: UserWarning: `do_sample` is set to `False`. However, `temperature` is set to `0.9` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `temperature`.
+  warnings.warn(
+/home/wangfy26/miniconda3/envs/LLM-hw1/lib/python3.12/site-packages/transformers/generation/configuration_utils.py:397: UserWarning: `do_sample` is set to `False`. However, `top_p` is set to `0.6` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `top_p`.
+  warnings.warn(
+{'ppl': 5.472130120278332, 'seqlen': 2048, 'blocks': 166, 'predicted_tokens': 339802, 'total_tokenized_tokens': 341469, 'dropped_tokens': 1501, 'seconds': 31.926572133786976, 'peak_allocated_bytes': 14225679360, 'model_allocated_bytes': 13543956480, 'token_ids_sha256': '8e0218eea3a8ac00caa80af114e52f301aa90a919124378320787e7f777cb3ee', 'model': '/home/wangfy26/workspace/LLM-hw1/model', 'output': 'reproduction/results/baseline_2048.json', 'max_blocks': 0, 'bits': 16, 'hadamard': False, 'sample': {'prompt': 'The capital of France is', 'completion': 'The capital of France is a city of contrasts. The city is home to the Eiffel Tower, the Louvre, and the Arc de Triomphe. It is also home to the Notre Dame Cathedral, the Sacre Coeur, and'}}

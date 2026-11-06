@@ -1,0 +1,69 @@
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00, 17.55it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00, 17.52it/s]
+/home/wangfy26/miniconda3/envs/LLM-hw1/lib/python3.12/site-packages/transformers/generation/configuration_utils.py:392: UserWarning: `do_sample` is set to `False`. However, `temperature` is set to `0.9` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `temperature`. This was detected when initializing the generation config instance, which means the corresponding file may hold incorrect parameterization and should be fixed.
+  warnings.warn(
+/home/wangfy26/miniconda3/envs/LLM-hw1/lib/python3.12/site-packages/transformers/generation/configuration_utils.py:397: UserWarning: `do_sample` is set to `False`. However, `top_p` is set to `0.6` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `top_p`. This was detected when initializing the generation config instance, which means the corresponding file may hold incorrect parameterization and should be fixed.
+  warnings.warn(
+fisher shard 1: 16/1024, elapsed 4.5s, loss 10.64332
+fisher shard 1: 32/1024, elapsed 8.5s, loss 10.38097
+fisher shard 1: 48/1024, elapsed 12.6s, loss 9.97172
+fisher shard 1: 64/1024, elapsed 16.7s, loss 10.20350
+fisher shard 1: 80/1024, elapsed 20.8s, loss 11.30548
+fisher shard 1: 96/1024, elapsed 25.0s, loss 9.93090
+fisher shard 1: 112/1024, elapsed 29.1s, loss 11.38675
+fisher shard 1: 128/1024, elapsed 33.3s, loss 10.05550
+fisher shard 1: 144/1024, elapsed 37.4s, loss 10.66520
+fisher shard 1: 160/1024, elapsed 41.6s, loss 10.29554
+fisher shard 1: 176/1024, elapsed 45.8s, loss 9.72282
+fisher shard 1: 192/1024, elapsed 50.1s, loss 10.31033
+fisher shard 1: 208/1024, elapsed 54.3s, loss 10.60102
+fisher shard 1: 224/1024, elapsed 58.5s, loss 10.86829
+fisher shard 1: 240/1024, elapsed 62.8s, loss 9.81021
+fisher shard 1: 256/1024, elapsed 67.1s, loss 11.03954
+fisher shard 1: 272/1024, elapsed 71.4s, loss 9.67701
+fisher shard 1: 288/1024, elapsed 75.7s, loss 10.68150
+fisher shard 1: 304/1024, elapsed 80.0s, loss 10.18073
+fisher shard 1: 320/1024, elapsed 84.4s, loss 9.53707
+fisher shard 1: 336/1024, elapsed 88.7s, loss 9.35340
+fisher shard 1: 352/1024, elapsed 93.2s, loss 11.78108
+fisher shard 1: 368/1024, elapsed 98.0s, loss 8.98509
+fisher shard 1: 384/1024, elapsed 103.2s, loss 10.45255
+fisher shard 1: 400/1024, elapsed 109.0s, loss 10.94197
+fisher shard 1: 416/1024, elapsed 115.4s, loss 11.35563
+fisher shard 1: 432/1024, elapsed 122.5s, loss 10.66235
+fisher shard 1: 448/1024, elapsed 130.1s, loss 10.25037
+fisher shard 1: 464/1024, elapsed 137.9s, loss 11.47879
+fisher shard 1: 480/1024, elapsed 146.2s, loss 9.08474
+fisher shard 1: 496/1024, elapsed 154.8s, loss 9.96842
+fisher shard 1: 512/1024, elapsed 163.7s, loss 10.68282
+fisher shard 1: 528/1024, elapsed 172.5s, loss 9.88753
+fisher shard 1: 544/1024, elapsed 181.5s, loss 9.79145
+fisher shard 1: 560/1024, elapsed 190.5s, loss 10.24015
+fisher shard 1: 576/1024, elapsed 200.0s, loss 11.08041
+fisher shard 1: 592/1024, elapsed 209.6s, loss 11.82087
+fisher shard 1: 608/1024, elapsed 219.2s, loss 10.58420
+fisher shard 1: 624/1024, elapsed 228.8s, loss 9.74331
+fisher shard 1: 640/1024, elapsed 238.5s, loss 10.16326
+fisher shard 1: 656/1024, elapsed 248.4s, loss 10.52062
+fisher shard 1: 672/1024, elapsed 258.4s, loss 10.83878
+fisher shard 1: 688/1024, elapsed 268.3s, loss 9.57608
+fisher shard 1: 704/1024, elapsed 278.2s, loss 10.29475
+fisher shard 1: 720/1024, elapsed 288.6s, loss 10.18816
+fisher shard 1: 736/1024, elapsed 298.7s, loss 10.04543
+fisher shard 1: 752/1024, elapsed 309.1s, loss 10.32279
+fisher shard 1: 768/1024, elapsed 319.4s, loss 10.07000
+fisher shard 1: 784/1024, elapsed 329.8s, loss 9.63759
+fisher shard 1: 800/1024, elapsed 340.1s, loss 10.84978
+fisher shard 1: 816/1024, elapsed 350.5s, loss 9.60880
+fisher shard 1: 832/1024, elapsed 360.9s, loss 10.53145
+fisher shard 1: 848/1024, elapsed 371.7s, loss 11.05800
+fisher shard 1: 864/1024, elapsed 382.5s, loss 11.10437
+fisher shard 1: 880/1024, elapsed 393.2s, loss 11.09446
+fisher shard 1: 896/1024, elapsed 403.9s, loss 10.87052
+fisher shard 1: 912/1024, elapsed 414.6s, loss 10.53300
+fisher shard 1: 928/1024, elapsed 425.4s, loss 10.86264
+fisher shard 1: 944/1024, elapsed 436.3s, loss 11.75183
+fisher shard 1: 960/1024, elapsed 447.4s, loss 10.34471
+fisher shard 1: 976/1024, elapsed 458.0s, loss 10.10200
+fisher shard 1: 992/1024, elapsed 468.6s, loss 9.63045
+fisher shard 1: 1008/1024, elapsed 479.5s, loss 11.81227
+fisher shard 1: 1024/1024, elapsed 490.5s, loss 9.94690

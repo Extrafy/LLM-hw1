@@ -1,0 +1,15 @@
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00, 18.87it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00, 18.83it/s]
+/home/wangfy26/miniconda3/envs/LLM-hw1/lib/python3.12/site-packages/transformers/generation/configuration_utils.py:392: UserWarning: `do_sample` is set to `False`. However, `temperature` is set to `0.9` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `temperature`. This was detected when initializing the generation config instance, which means the corresponding file may hold incorrect parameterization and should be fixed.
+  warnings.warn(
+/home/wangfy26/miniconda3/envs/LLM-hw1/lib/python3.12/site-packages/transformers/generation/configuration_utils.py:397: UserWarning: `do_sample` is set to `False`. However, `top_p` is set to `0.6` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `top_p`. This was detected when initializing the generation config instance, which means the corresponding file may hold incorrect parameterization and should be fixed.
+  warnings.warn(
+PPL blocks 10/83: 5.314638
+PPL blocks 20/83: 5.431202
+PPL blocks 30/83: 5.273542
+PPL blocks 40/83: 5.045157
+PPL blocks 50/83: 5.026350
+PPL blocks 60/83: 5.197899
+PPL blocks 70/83: 5.148640
+PPL blocks 80/83: 5.092045
+PPL blocks 83/83: 5.116375
+{'ppl': 5.116374930917055, 'seqlen': 4096, 'blocks': 83, 'predicted_tokens': 339885, 'total_tokenized_tokens': 341469, 'dropped_tokens': 1501, 'seconds': 32.87321348488331, 'peak_allocated_bytes': 14896784896, 'model_allocated_bytes': 13543956480, 'token_ids_sha256': '8e0218eea3a8ac00caa80af114e52f301aa90a919124378320787e7f777cb3ee', 'model': '/home/wangfy26/workspace/LLM-hw1/model', 'output': 'reproduction/results/baseline_4096.json', 'max_blocks': 0, 'bits': 16, 'hadamard': False, 'sample': False}

@@ -10,11 +10,10 @@ from .svd_mistral import (
     PaluMistralForCausalLM
 )
 
-#qwen
-from .svd_qwen import (
-    PaluQwen2Config,
-    PaluQwen2ForCausalLM
-)
+# Qwen2 was added after the pinned transformers 4.37.2 release.
+import transformers
+if hasattr(transformers, "Qwen2ForCausalLM"):
+    from .svd_qwen import PaluQwen2Config, PaluQwen2ForCausalLM
 
 #modules
 from .modules import (
@@ -34,8 +33,9 @@ AVAILABLE_MODELS = {
         'config': PaluMistralConfig,
         'ModelForCausalLM': PaluMistralForCausalLM
     },
-    'qwen2': {
-        'config': PaluQwen2Config,
-        'ModelForCausalLM': PaluQwen2ForCausalLM
-    }
 }
+if hasattr(transformers, "Qwen2ForCausalLM"):
+    AVAILABLE_MODELS['qwen2'] = {
+        'config': PaluQwen2Config,
+        'ModelForCausalLM': PaluQwen2ForCausalLM,
+    }

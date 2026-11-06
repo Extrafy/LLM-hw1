@@ -1,0 +1,94 @@
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:00<00:00, 17.57it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:00<00:00, 18.95it/s]
+PPL blocks 10/166: 5.553889
+PPL blocks 20/166: 6.247702
+PPL blocks 30/166: 6.377662
+PPL blocks 40/166: 6.382361
+PPL blocks 50/166: 6.076805
+PPL blocks 60/166: 6.164537
+PPL blocks 70/166: 5.956707
+PPL blocks 80/166: 5.907988
+PPL blocks 90/166: 5.907259
+PPL blocks 100/166: 5.889709
+PPL blocks 110/166: 6.078176
+PPL blocks 120/166: 6.096118
+PPL blocks 130/166: 6.051056
+PPL blocks 140/166: 6.054938
+PPL blocks 150/166: 6.020507
+PPL blocks 160/166: 5.987816
+PPL blocks 166/166: 6.017887
+PPL blocks 10/256: 8.077829
+PPL blocks 20/256: 8.254687
+PPL blocks 30/256: 8.789687
+PPL blocks 40/256: 8.710838
+PPL blocks 50/256: 8.343052
+PPL blocks 60/256: 8.326266
+PPL blocks 70/256: 8.205936
+PPL blocks 80/256: 8.370983
+PPL blocks 90/256: 8.554298
+PPL blocks 100/256: 8.721793
+PPL blocks 110/256: 8.747035
+PPL blocks 120/256: 8.803235
+PPL blocks 130/256: 8.766752
+PPL blocks 140/256: 8.745919
+PPL blocks 150/256: 8.461522
+PPL blocks 160/256: 8.463119
+PPL blocks 170/256: 8.497158
+PPL blocks 180/256: 8.513658
+PPL blocks 190/256: 8.378801
+PPL blocks 200/256: 8.535651
+PPL blocks 210/256: 8.602681
+PPL blocks 220/256: 8.652765
+PPL blocks 230/256: 8.670483
+PPL blocks 240/256: 8.743010
+PPL blocks 250/256: 8.751058
+PPL blocks 256/256: 8.716579
+PPL blocks 10/83: 5.815884
+PPL blocks 20/83: 5.956619
+PPL blocks 30/83: 5.768146
+PPL blocks 40/83: 5.530571
+PPL blocks 50/83: 5.507550
+PPL blocks 60/83: 5.705981
+PPL blocks 70/83: 5.672092
+PPL blocks 80/83: 5.605122
+PPL blocks 83/83: 5.633026
+{'ppl': 5.633025545618041, 'dataset': 'wikitext2', 'seqlen': 4096, 'blocks': 83, 'predicted_tokens': 339885, 'total_tokenized_tokens': 341469, 'dropped_tokens': 1501, 'seconds': 67.57344161486253, 'peak_allocated_bytes': 13959620608, 'model_allocated_bytes': 12615311872, 'token_ids_sha256': '8e0218eea3a8ac00caa80af114e52f301aa90a919124378320787e7f777cb3ee', 'model': 'reproduction/checkpoints/g4_r50', 'bits': 16, 'hadamard': False, 'quantization': 'per-token asymmetric fake quantization'}
+PPL blocks 10/83: 6.196623
+PPL blocks 20/83: 6.329659
+PPL blocks 30/83: 6.119918
+PPL blocks 40/83: 5.865418
+PPL blocks 50/83: 5.848613
+PPL blocks 60/83: 6.057128
+PPL blocks 70/83: 6.023356
+PPL blocks 80/83: 5.949209
+PPL blocks 83/83: 5.979022
+{'ppl': 5.979022415631895, 'dataset': 'wikitext2', 'seqlen': 4096, 'blocks': 83, 'predicted_tokens': 339885, 'total_tokenized_tokens': 341469, 'dropped_tokens': 1501, 'seconds': 83.44744590623304, 'peak_allocated_bytes': 13959620608, 'model_allocated_bytes': 12615311872, 'token_ids_sha256': '8e0218eea3a8ac00caa80af114e52f301aa90a919124378320787e7f777cb3ee', 'model': 'reproduction/checkpoints/g4_r50', 'bits': 3, 'hadamard': False, 'quantization': 'per-token asymmetric fake quantization'}
+PPL blocks 10/83: 17.842102
+PPL blocks 20/83: 19.353112
+PPL blocks 30/83: 19.786217
+PPL blocks 40/83: 18.605823
+PPL blocks 50/83: 18.909773
+PPL blocks 60/83: 19.470472
+PPL blocks 70/83: 19.576379
+PPL blocks 80/83: 19.365089
+PPL blocks 83/83: 19.573791
+{'ppl': 19.57379074663926, 'dataset': 'wikitext2', 'seqlen': 4096, 'blocks': 83, 'predicted_tokens': 339885, 'total_tokenized_tokens': 341469, 'dropped_tokens': 1501, 'seconds': 84.67689031735063, 'peak_allocated_bytes': 13959620608, 'model_allocated_bytes': 12615311872, 'token_ids_sha256': '8e0218eea3a8ac00caa80af114e52f301aa90a919124378320787e7f777cb3ee', 'model': 'reproduction/checkpoints/g4_r50', 'bits': 2, 'hadamard': False, 'quantization': 'per-token asymmetric fake quantization'}
+PPL blocks 10/83: 5.943662
+PPL blocks 20/83: 6.086195
+PPL blocks 30/83: 5.897888
+PPL blocks 40/83: 5.654402
+PPL blocks 50/83: 5.630406
+PPL blocks 60/83: 5.836564
+PPL blocks 70/83: 5.801678
+PPL blocks 80/83: 5.731669
+PPL blocks 83/83: 5.760711
+{'ppl': 5.760711425634786, 'dataset': 'wikitext2', 'seqlen': 4096, 'blocks': 83, 'predicted_tokens': 339885, 'total_tokenized_tokens': 341469, 'dropped_tokens': 1501, 'seconds': 89.42983386898413, 'peak_allocated_bytes': 13959620608, 'model_allocated_bytes': 12615311872, 'token_ids_sha256': '8e0218eea3a8ac00caa80af114e52f301aa90a919124378320787e7f777cb3ee', 'model': 'reproduction/checkpoints/g4_r50', 'bits': 3, 'hadamard': True, 'quantization': 'per-token asymmetric fake quantization'}
+PPL blocks 10/83: 7.225165
+PPL blocks 20/83: 7.399558
+PPL blocks 30/83: 7.139362
+PPL blocks 40/83: 6.834767
+PPL blocks 50/83: 6.835849
+PPL blocks 60/83: 7.082863
+PPL blocks 70/83: 7.048672
+PPL blocks 80/83: 6.959120
+PPL blocks 83/83: 6.994515
+{'ppl': 6.994515111898209, 'dataset': 'wikitext2', 'seqlen': 4096, 'blocks': 83, 'predicted_tokens': 339885, 'total_tokenized_tokens': 341469, 'dropped_tokens': 1501, 'seconds': 90.86719810171053, 'peak_allocated_bytes': 13959620608, 'model_allocated_bytes': 12615311872, 'token_ids_sha256': '8e0218eea3a8ac00caa80af114e52f301aa90a919124378320787e7f777cb3ee', 'model': 'reproduction/checkpoints/g4_r50', 'bits': 2, 'hadamard': True, 'quantization': 'per-token asymmetric fake quantization'}

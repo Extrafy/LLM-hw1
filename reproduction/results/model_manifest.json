@@ -1,0 +1,50 @@
+{
+  "added_tokens.json": {
+    "bytes": 21,
+    "sha256": "39c257654f85e478a9cb3bf34da53b3e4625e7b05ce15f193fe41724fae7b825"
+  },
+  "config.json": {
+    "bytes": 583,
+    "sha256": "3c66a81e29ce617a74ff2e4055e7fb275b5c9457103864745693fbce59b368a2"
+  },
+  "configuration.json": {
+    "bytes": 183,
+    "sha256": "53c5fede09dd574186dc28bb00d868e331031d561a6207198ec4c9dee8b49d86"
+  },
+  "generation_config.json": {
+    "bytes": 179,
+    "sha256": "480d72f98f88e041d59ac8434f00b486801cfdc4e28c7b1cb681d724cb395816"
+  },
+  "model-00001-of-00002.safetensors": {
+    "bytes": 9976578928,
+    "sha256": "4ec71fd53e99766de38f24753b30c9e8942630e9e576a1ba27b0ec531e87be41"
+  },
+  "model-00002-of-00002.safetensors": {
+    "bytes": 3500297344,
+    "sha256": "41780b5dac322ac35598737e99208d90bdc632a1ba3389ebedbb46a1d8385a7f"
+  },
+  "model.safetensors.index.json": {
+    "bytes": 26788,
+    "sha256": "217d527037a95cd5cd30384afb425987824373b94cc7206beb48ec0c9499c98f"
+  },
+  "pytorch_model.bin.index.json": {
+    "bytes": 26788,
+    "sha256": "773618361c0b7570f0ea528dc07b9c127018231316a548ec4ddfb87cd0dcecf0"
+  },
+  "special_tokens_map.json": {
+    "bytes": 435,
+    "sha256": "2ea88203b955648951a454e73a73967ff77ba4e79ae8ceb4400d4ab2cb040777"
+  },
+  "tokenizer.json": {
+    "bytes": 1842764,
+    "sha256": "f7b50bcf6d6672eade5e43514d48e9c1e4e63a56aef7b14acdaca94ce93436f7"
+  },
+  "tokenizer.model": {
+    "bytes": 499723,
+    "sha256": "9e556afd44213b6bd1be2b850ebbbd98f5481437a8021afaf58ee7fb1818d347"
+  },
+  "tokenizer_config.json": {
+    "bytes": 746,
+    "sha256": "37951d5a1e0c6a77f88c61f79972f17e889b62258aadff4c61eacd3fb567fe72"
+  }
+}

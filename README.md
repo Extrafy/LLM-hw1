@@ -34,10 +34,10 @@ cd Palu
 
 2. Prepare environment
 ```
-conda create -n Palu python=3.10
-conda activate Palu
-pip install -r requirements.txt
+conda activate LLM-hw1
+uv pip install -r requirements.txt
 ```
+The reproduction uses the global `uv` and Python from the existing `LLM-hw1` conda environment; no project `.venv` is created.
 
 3. Install 3rdparty libraries
 ```

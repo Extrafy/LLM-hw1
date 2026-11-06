@@ -47,6 +47,11 @@ def get_module_by_name(module, module_name):
 
 def dump_to_huggingface_repos(model, tokenizer, save_path, args):
     tokenizer.save_pretrained(save_path)
+    # Some original Llama checkpoints pair greedy decoding with sampling-only
+    # values, which transformers 4.37 refuses to save.
+    if model.generation_config is not None and not model.generation_config.do_sample:
+        model.generation_config.temperature = 1.0
+        model.generation_config.top_p = 1.0
     #model.generation_config = Gene
     #if "vicuna" in model.config._name_or_path.lower() or "longchat" in model.config._name_or_path.lower():
         #NOTE(brian1009): Ad-hoc fixing the bug in Vicuna

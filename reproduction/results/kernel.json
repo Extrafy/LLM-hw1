@@ -1,0 +1,98 @@
+{
+  "gpu": "NVIDIA A100-PCIE-40GB",
+  "torch": "2.11.0+cu130",
+  "baseline": "upstream WX GEMV with materialized post-RoPE K",
+  "timing": "triton.testing.do_bench warmup=100ms rep=500ms, default mean",
+  "rows": [
+    {
+      "group_size": 1,
+      "length": 4096,
+      "key_rank": 1024,
+      "relative_l2": 0.0008262671181000769,
+      "max_abs_error": 0.0003662109375,
+      "baseline_ms": 0.05117703734716768,
+      "palu_ms": 0.033730266536585986,
+      "speedup": 1.5172437873165876
+    },
+    {
+      "group_size": 1,
+      "length": 16384,
+      "key_rank": 1024,
+      "relative_l2": 0.0008648227667436004,
+      "max_abs_error": 0.00048828125,
+      "baseline_ms": 0.11990853176382235,
+      "palu_ms": 0.10483028368181262,
+      "speedup": 1.1438348495533617
+    },
+    {
+      "group_size": 1,
+      "length": 65536,
+      "key_rank": 1024,
+      "relative_l2": 0.0013240345288068056,
+      "max_abs_error": 0.0008392333984375,
+      "baseline_ms": 0.4102634917104864,
+      "palu_ms": 0.3991228209488492,
+      "speedup": 1.0279128884065114
+    },
+    {
+      "group_size": 4,
+      "length": 4096,
+      "key_rank": 1024,
+      "relative_l2": 0.0008235038258135319,
+      "max_abs_error": 0.000732421875,
+      "baseline_ms": 0.04425468828360511,
+      "palu_ms": 0.06422162126876753,
+      "speedup": 0.6890932899124301
+    },
+    {
+      "group_size": 4,
+      "length": 16384,
+      "key_rank": 1024,
+      "relative_l2": 0.0008658961160108447,
+      "max_abs_error": 0.000732421875,
+      "baseline_ms": 0.12005476959728599,
+      "palu_ms": 0.22560378141899437,
+      "speedup": 0.5321487469854003
+    },
+    {
+      "group_size": 4,
+      "length": 65536,
+      "key_rank": 1024,
+      "relative_l2": 0.0013631691690534353,
+      "max_abs_error": 0.00220489501953125,
+      "baseline_ms": 0.41042616216607786,
+      "palu_ms": 0.9022123305792537,
+      "speedup": 0.4549108322456301
+    },
+    {
+      "group_size": 32,
+      "length": 4096,
+      "key_rank": 1024,
+      "relative_l2": 0.000833878992125392,
+      "max_abs_error": 0.001953125,
+      "baseline_ms": 0.044516250256428365,
+      "palu_ms": 0.3633217790627307,
+      "speedup": 0.12252568610466437
+    },
+    {
+      "group_size": 32,
+      "length": 16384,
+      "key_rank": 1024,
+      "relative_l2": 0.0008646497735753655,
+      "max_abs_error": 0.001953125,
+      "baseline_ms": 0.12047836650811188,
+      "palu_ms": 1.381977348515157,
+      "speedup": 0.08717824980095217
+    },
+    {
+      "group_size": 32,
+      "length": 65536,
+      "key_rank": 1024,
+      "relative_l2": 0.001287858234718442,
+      "max_abs_error": 0.004150390625,
+      "baseline_ms": 0.41005590742145664,
+      "palu_ms": 5.490574955940247,
+      "speedup": 0.07468360066331808
+    }
+  ]
+}

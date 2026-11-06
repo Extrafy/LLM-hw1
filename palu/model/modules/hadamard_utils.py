@@ -1,5 +1,8 @@
 import torch, math
-import fast_hadamard_transform
+try:
+    import fast_hadamard_transform
+except ImportError:
+    fast_hadamard_transform = None
 # Adapted from https://github.com/Cornell-RelaxML/quip-sharp/blob/main/lib/utils/matmul_had.py
 
 def get_hadK(n, transpose=False):
@@ -36,6 +39,14 @@ def get_hadK(n, transpose=False):
         assert (is_pow2(n // 84))
         K = 84
         hadK = get_had84().T if transpose else get_had84()
+    elif any(n % k == 0 and is_pow2(n // k) for k in (60, 52, 44, 40, 36, 28, 20, 12)):
+        # Rank search rounds to 32, producing ranks such as 96, 160 and 224.
+        # These matrices already exist below but were missing from dispatch.
+        K = next(k for k in (60, 52, 44, 40, 36, 28, 20, 12)
+                 if n % k == 0 and is_pow2(n // k))
+        hadK = globals()[f"get_had{K}"]()
+        if transpose:
+            hadK = hadK.T
     elif n % 76 == 0:
         assert (is_pow2(n // 76))
         K = 76
@@ -84,6 +95,8 @@ def get_hadK(n, transpose=False):
 
 def apply_hadamard(x, transpose=False):
     dtype = x.dtype
+    if fast_hadamard_transform is None or x.device.type != "cuda":
+        return matmul_hadU(x, transpose=transpose).to(dtype)
     n = x.shape[-1]
     had_K, K = get_hadK(n)
     x = matmul_hadU_cuda(x.contiguous(), had_K, K, transpose=transpose).to(dtype)

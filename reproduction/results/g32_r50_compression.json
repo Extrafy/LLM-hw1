@@ -1,0 +1,204 @@
+{
+  "group_size": 32,
+  "ratio": 0.5,
+  "uniform": false,
+  "output": "reproduction/checkpoints/g32_r50",
+  "ranks": {
+    "model.layers.0.self_attn.k_proj": [
+      288
+    ],
+    "model.layers.0.self_attn.v_proj": [
+      1920
+    ],
+    "model.layers.1.self_attn.k_proj": [
+      544
+    ],
+    "model.layers.1.self_attn.v_proj": [
+      4096
+    ],
+    "model.layers.2.self_attn.k_proj": [
+      1056
+    ],
+    "model.layers.2.self_attn.v_proj": [
+      4096
+    ],
+    "model.layers.3.self_attn.k_proj": [
+      1536
+    ],
+    "model.layers.3.self_attn.v_proj": [
+      4096
+    ],
+    "model.layers.4.self_attn.k_proj": [
+      1280
+    ],
+    "model.layers.4.self_attn.v_proj": [
+      4096
+    ],
+    "model.layers.5.self_attn.k_proj": [
+      1312
+    ],
+    "model.layers.5.self_attn.v_proj": [
+      4096
+    ],
+    "model.layers.6.self_attn.k_proj": [
+      1536
+    ],
+    "model.layers.6.self_attn.v_proj": [
+      4096
+    ],
+    "model.layers.7.self_attn.k_proj": [
+      1408
+    ],
+    "model.layers.7.self_attn.v_proj": [
+      4096
+    ],
+    "model.layers.8.self_attn.k_proj": [
+      1248
+    ],
+    "model.layers.8.self_attn.v_proj": [
+      4096
+    ],
+    "model.layers.9.self_attn.k_proj": [
+      1216
+    ],
+    "model.layers.9.self_attn.v_proj": [
+      4096
+    ],
+    "model.layers.10.self_attn.k_proj": [
+      1088
+    ],
+    "model.layers.10.self_attn.v_proj": [
+      4096
+    ],
+    "model.layers.11.self_attn.k_proj": [
+      1248
+    ],
+    "model.layers.11.self_attn.v_proj": [
+      4096
+    ],
+    "model.layers.12.self_attn.k_proj": [
+      1088
+    ],
+    "model.layers.12.self_attn.v_proj": [
+      4096
+    ],
+    "model.layers.13.self_attn.k_proj": [
+      1024
+    ],
+    "model.layers.13.self_attn.v_proj": [
+      4096
+    ],
+    "model.layers.14.self_attn.k_proj": [
+      832
+    ],
+    "model.layers.14.self_attn.v_proj": [
+      3712
+    ],
+    "model.layers.15.self_attn.k_proj": [
+      832
+    ],
+    "model.layers.15.self_attn.v_proj": [
+      3584
+    ],
+    "model.layers.16.self_attn.k_proj": [
+      800
+    ],
+    "model.layers.16.self_attn.v_proj": [
+      3136
+    ],
+    "model.layers.17.self_attn.k_proj": [
+      864
+    ],
+    "model.layers.17.self_attn.v_proj": [
+      3072
+    ],
+    "model.layers.18.self_attn.k_proj": [
+      768
+    ],
+    "model.layers.18.self_attn.v_proj": [
+      2464
+    ],
+    "model.layers.19.self_attn.k_proj": [
+      640
+    ],
+    "model.layers.19.self_attn.v_proj": [
+      2304
+    ],
+    "model.layers.20.self_attn.k_proj": [
+      736
+    ],
+    "model.layers.20.self_attn.v_proj": [
+      2464
+    ],
+    "model.layers.21.self_attn.k_proj": [
+      736
+    ],
+    "model.layers.21.self_attn.v_proj": [
+      2016
+    ],
+    "model.layers.22.self_attn.k_proj": [
+      768
+    ],
+    "model.layers.22.self_attn.v_proj": [
+      2272
+    ],
+    "model.layers.23.self_attn.k_proj": [
+      704
+    ],
+    "model.layers.23.self_attn.v_proj": [
+      2080
+    ],
+    "model.layers.24.self_attn.k_proj": [
+      864
+    ],
+    "model.layers.24.self_attn.v_proj": [
+      2304
+    ],
+    "model.layers.25.self_attn.k_proj": [
+      896
+    ],
+    "model.layers.25.self_attn.v_proj": [
+      2304
+    ],
+    "model.layers.26.self_attn.k_proj": [
+      928
+    ],
+    "model.layers.26.self_attn.v_proj": [
+      2208
+    ],
+    "model.layers.27.self_attn.k_proj": [
+      960
+    ],
+    "model.layers.27.self_attn.v_proj": [
+      2048
+    ],
+    "model.layers.28.self_attn.k_proj": [
+      1216
+    ],
+    "model.layers.28.self_attn.v_proj": [
+      2144
+    ],
+    "model.layers.29.self_attn.k_proj": [
+      928
+    ],
+    "model.layers.29.self_attn.v_proj": [
+      2304
+    ],
+    "model.layers.30.self_attn.k_proj": [
+      992
+    ],
+    "model.layers.30.self_attn.v_proj": [
+      1824
+    ],
+    "model.layers.31.self_attn.k_proj": [
+      992
+    ],
+    "model.layers.31.self_attn.v_proj": [
+      2304
+    ]
+  },
+  "retained_fraction": 0.4998779296875,
+  "decompose_seconds": 153.888289433904,
+  "kv_fp16_bytes_128k": 34351349760,
+  "note": "Latent cache size is theoretical; HF accuracy path reconstructs full KV cache."
+}

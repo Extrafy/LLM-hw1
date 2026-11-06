@@ -1,0 +1,44 @@
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:00<00:00, 15.58it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:00<00:00, 17.00it/s]
+PPL blocks 10/166: 5.194662
+PPL blocks 20/166: 5.887020
+PPL blocks 30/166: 6.000087
+PPL blocks 40/166: 5.992562
+PPL blocks 50/166: 5.713930
+PPL blocks 60/166: 5.798451
+PPL blocks 70/166: 5.602509
+PPL blocks 80/166: 5.548322
+PPL blocks 90/166: 5.546484
+PPL blocks 100/166: 5.528780
+PPL blocks 110/166: 5.704054
+PPL blocks 120/166: 5.714167
+PPL blocks 130/166: 5.657646
+PPL blocks 140/166: 5.662131
+PPL blocks 150/166: 5.629483
+PPL blocks 160/166: 5.603293
+PPL blocks 166/166: 5.629918
+PPL blocks 10/256: 7.293900
+PPL blocks 20/256: 7.332346
+PPL blocks 30/256: 7.882345
+PPL blocks 40/256: 7.692329
+PPL blocks 50/256: 7.425122
+PPL blocks 60/256: 7.402017
+PPL blocks 70/256: 7.291821
+PPL blocks 80/256: 7.411634
+PPL blocks 90/256: 7.607763
+PPL blocks 100/256: 7.518094
+PPL blocks 110/256: 7.537255
+PPL blocks 120/256: 7.606245
+PPL blocks 130/256: 7.602756
+PPL blocks 140/256: 7.599106
+PPL blocks 150/256: 7.352578
+PPL blocks 160/256: 7.356729
+PPL blocks 170/256: 7.411393
+PPL blocks 180/256: 7.430921
+PPL blocks 190/256: 7.289277
+PPL blocks 200/256: 7.417255
+PPL blocks 210/256: 7.493452
+PPL blocks 220/256: 7.550923
+PPL blocks 230/256: 7.578392
+PPL blocks 240/256: 7.648617
+PPL blocks 250/256: 7.668792
+PPL blocks 256/256: 7.644210
