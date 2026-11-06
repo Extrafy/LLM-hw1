@@ -19,15 +19,15 @@ Palu 将 Key/Value 投影矩阵离线近似为低秩乘积 `W ≈ A B`。推理�
 
 ## 3. 复现环境、数据与工程
 
-实验在 4× NVIDIA A100-PCIE-40GB 主机完成，单个任务使用一张卡。完整环境记录在 [`results/environment.json`](results/environment.json)，模型文件记录在 [`results/model_manifest.json`](results/model_manifest.json)。关键版本为 Python 3.12.16、PyTorch 2.11.0+cu130、CUDA runtime 13.0、Transformers 4.37.2、Triton 3.6.0。依赖统一记录在仓库根目录 [`requirements.txt`](../requirements.txt)；在 `conda activate LLM-hw1` 后，直接调用该环境中的全局 `uv` 安装，不创建额外虚拟环境。
+实验在 4× NVIDIA A100-PCIE-40GB 主机完成，单个任务使用一张卡。完整环境记录在 [`reproduction/results/environment.json`](reproduction/results/environment.json)，模型文件记录在 [`reproduction/results/model_manifest.json`](reproduction/results/model_manifest.json)。关键版本为 Python 3.12.16、PyTorch 2.11.0+cu130、CUDA runtime 13.0、Transformers 4.37.2、Triton 3.6.0。依赖统一记录在仓库根目录 [`requirements.txt`](requirements.txt)；在 `conda activate LLM-hw1` 后，直接调用该环境中的全局 `uv` 安装，不创建额外虚拟环境。
 
-数据固定为 WikiText-2 raw `Salesforce/wikitext` revision `b08601e...`，C4 固定使用论文原代码的 validation shard revision `607bd4...` 和前 1100 条文本。每个数据文件和来源 URL 的 SHA256 在 [`data/manifest.json`](data/manifest.json)、[`data/c4_manifest.json`](data/c4_manifest.json)。
+数据固定为 WikiText-2 raw `Salesforce/wikitext` revision `b08601e...`，C4 固定使用论文原代码的 validation shard revision `607bd4...` 和前 1100 条文本。每个数据文件和来源 URL 的 SHA256 在 [`reproduction/data/manifest.json`](reproduction/data/manifest.json)、[`reproduction/data/c4_manifest.json`](reproduction/data/c4_manifest.json)。
 
-核心脚本如下：`prepare_data.py` 下载数据；`calibrate.py` 执行白化/Fisher 校准；`merge_fisher.py` 合并多 GPU 分片；`compress_model.py` 生成 HuggingFace 格式压缩模型；`evaluate.py` 和 `evaluate_suite.py` 测 PPL/量化；`benchmark_kernel.py` 测 Triton 内核；`check_core.py` 做分解、融合和量化数值检查。最小完整流程见 [`run_reproduction.sh`](run_reproduction.sh)。
+核心脚本如下：`prepare_data.py` 下载数据；`calibrate.py` 执行白化/Fisher 校准；`merge_fisher.py` 合并多 GPU 分片；`compress_model.py` 生成 HuggingFace 格式压缩模型；`evaluate.py` 和 `evaluate_suite.py` 测 PPL/量化；`benchmark_kernel.py` 测 Triton 内核；`check_core.py` 做分解、融合和量化数值检查。最小完整流程见 [`reproduction/run_reproduction.sh`](reproduction/run_reproduction.sh)。
 
 ## 4. 复现步骤与参数
 
-下面的命令都在仓库根目录执行。每一步后附有用途说明，便于按需单独运行；完整串行流程也写在 [`run_reproduction.sh`](run_reproduction.sh) 中。
+下面的命令都在仓库根目录执行。每一步后附有用途说明，便于按需单独运行；完整串行流程也写在 [`reproduction/run_reproduction.sh`](reproduction/run_reproduction.sh) 中。
 
 ### 4.1 激活环境并安装依赖
 
@@ -114,7 +114,7 @@ MPLCONFIGDIR=/tmp/mpl python reproduction/scripts/make_report_assets.py
 | J-LRD, gs=32, 50% | 5.62 | **5.6299** | +0.0099 |
 | Fisher G-LRD, 30% compression | 5.62 | **5.6163** | -0.0037 |
 
-![PPL comparison](figures/ppl_comparison.png)
+![PPL comparison](reproduction/figures/ppl_comparison.png)
 
 论文 Table 2 采用长度 4096，因此额外测得 Baseline **5.1164**（论文 5.12）、G-LRD 50% **5.6330**（论文 5.63）、G-LRD 30% **5.2530**（论文 5.25）。C4 的 256 个窗口基线为 **7.2636**（论文 7.26），G-LRD 50% 为 **8.7166**，G-LRD 30% 为 **7.5894**。C4 压缩值没有论文 Table 1 的直接对照项，但原始 JSON 已保存。
 
@@ -133,7 +133,7 @@ MPLCONFIGDIR=/tmp/mpl python reproduction/scripts/make_report_assets.py
 | +3-bit, WHT | 5.33 | 5.3437 |
 | +2-bit, WHT | 5.76 | 6.1062 |
 
-![Quantization ablation](figures/quantization_ablation.png)
+![Quantization ablation](reproduction/figures/quantization_ablation.png)
 
 **差距分析。** 这组差异主要出现在 2-bit：50% 压缩下，无 WHT 的 PPL 比论文高 8.99；加 WHT 后差距缩小到 0.58。30% 压缩、2-bit+WHT 的差距为 0.35。相比之下，3-bit 两种设置与论文相差不超过 0.02，FP16 基线及压缩结果也都对齐。因此，模型权重、数据集切分和整体 PPL 计算流程不像是造成 2-bit 偏差的主要因素，偏差更可能来自极低位宽下量化参数和算子实现的细节。
 
@@ -143,7 +143,7 @@ MPLCONFIGDIR=/tmp/mpl python reproduction/scripts/make_report_assets.py
 
 ### 5.3 核心模块和内核
 
-[`core_checks.json`](results/core_checks.json) 的五项检查全部通过：全秩 SVD 最大误差 `2.24e-6`，WHT 融合 `4.77e-7`，Value 融合 `9.54e-7`，截断秩可执行，量化输出有限。开源 Triton kernel 在 A100 上的相对 L2 误差为 `0.00082–0.00136`。论文使用 RTX 4090；本机 A100 的单次 attention GEMV 结果为：
+[`reproduction/results/core_checks.json`](reproduction/results/core_checks.json) 的五项检查全部通过：全秩 SVD 最大误差 `2.24e-6`，WHT 融合 `4.77e-7`，Value 融合 `9.54e-7`，截断秩可执行，量化输出有限。开源 Triton kernel 在 A100 上的相对 L2 误差为 `0.00082–0.00136`。论文使用 RTX 4090；本机 A100 的单次 attention GEMV 结果为：
 
 | gs | 4096 speedup | 16K speedup | 64K speedup |
 |---:|---:|---:|---:|
@@ -151,11 +151,11 @@ MPLCONFIGDIR=/tmp/mpl python reproduction/scripts/make_report_assets.py
 | 4 | 0.69× | 0.53× | 0.45× |
 | 32 | 0.12× | 0.09× | 0.07× |
 
-这表明内核收益依赖组大小、GPU 和 kernel autotune；不能将 A100 结果与论文 RTX 4090 的 1.89× 直接比较。内核原始结果在 [`results/kernel.json`](results/kernel.json)，运行日志在 [`logs/kernel.log`](logs/kernel.log)。
+这表明内核收益依赖组大小、GPU 和 kernel autotune；不能将 A100 结果与论文 RTX 4090 的 1.89× 直接比较。内核原始结果在 [`reproduction/results/kernel.json`](reproduction/results/kernel.json)，运行日志在 [`reproduction/logs/kernel.log`](reproduction/logs/kernel.log)。
 
 ### 5.4 样例输出
 
-Baseline greedy generation 的固定输入为 `The capital of France is`，输出保存在 [`results/baseline_2048.json`](results/baseline_2048.json)：
+Baseline greedy generation 的固定输入为 `The capital of France is`，输出保存在 [`reproduction/results/baseline_2048.json`](reproduction/results/baseline_2048.json)：
 
 > The capital of France is a city of contrasts. The city is home to the Eiffel Tower, the Louvre, and the Arc de Triomphe. It is also home to the Notre Dame Cathedral, the Sacre Coeur, and
 
@@ -171,8 +171,8 @@ Baseline greedy generation 的固定输入为 `The capital of France is`，输�
 
 ## 7. 文件索引
 
-- 报告与清单：[`REPORT.md`](REPORT.md)
-- 结果表：[`results/ppl_comparison.csv`](results/ppl_comparison.csv)
-- 环境/模型：[`results/environment.json`](results/environment.json)、[`results/model_manifest.json`](results/model_manifest.json)
-- 结果图：[`figures/ppl_comparison.png`](figures/ppl_comparison.png)、[`figures/quantization_ablation.png`](figures/quantization_ablation.png)、[`figures/fisher_profile.png`](figures/fisher_profile.png)
-- 原始日志：[`logs/`](logs/)
+- 报告与清单：[`reproduction/REPORT.md`](reproduction/REPORT.md)
+- 结果表：[`reproduction/results/ppl_comparison.csv`](reproduction/results/ppl_comparison.csv)
+- 环境/模型：[`reproduction/results/environment.json`](reproduction/results/environment.json)、[`reproduction/results/model_manifest.json`](reproduction/results/model_manifest.json)
+- 结果图：[`reproduction/figures/ppl_comparison.png`](reproduction/figures/ppl_comparison.png)、[`reproduction/figures/quantization_ablation.png`](reproduction/figures/quantization_ablation.png)、[`reproduction/figures/fisher_profile.png`](reproduction/figures/fisher_profile.png)
+- 原始日志：[`reproduction/logs/`](reproduction/logs/)
